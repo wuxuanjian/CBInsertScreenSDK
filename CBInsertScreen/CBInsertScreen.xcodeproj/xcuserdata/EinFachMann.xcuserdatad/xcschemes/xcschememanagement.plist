@@ -7,11 +7,26 @@
 		<key>CBInsertScreen.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
+		</dict>
+		<key>CBInsertScreenSDK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>83ED9F0A182797CB004CDCCD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83ED9F17182797CB004CDCCD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>83F200B91820A11B0048B462</key>
 		<dict>
 			<key>primary</key>

@@ -2,4 +2,52 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CBInsertScreen/CBInsertScreenLIb/inc/GPS/CBGPSEngine.h"
+            timestampString = "405247240.010343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "@interface CBGPSEngine"
+            landmarkType = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CBGPSEngine locationManage]"
+                  moduleName = "CBiPhoneDome"
+                  urlString = "file://localhost/Users/EinFachMann/Desktop/WORK/CBInsertScreenSDK/CBInsertScreen/CBInsertScreenLIb/inc/GPS/CBGPSEngine.h"
+                  timestampString = "405249780.162193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CBGPSEngine setLocationManage:]"
+                  moduleName = "CBiPhoneDome"
+                  urlString = "file://localhost/Users/EinFachMann/Desktop/WORK/CBInsertScreenSDK/CBInsertScreen/CBInsertScreenLIb/inc/GPS/CBGPSEngine.h"
+                  timestampString = "405249780.162516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

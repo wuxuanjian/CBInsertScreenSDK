@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83F200B91820A11B0048B462"
-               BuildableName = "CBInsertScreen.app"
-               BlueprintName = "CBInsertScreen"
-               ReferencedContainer = "container:CBInsertScreen.xcodeproj">
+               BlueprintIdentifier = "83F2008518209EA20048B462"
+               BuildableName = "CBiPhoneDome.app"
+               BlueprintName = "CBiPhoneDome"
+               ReferencedContainer = "container:CBiPhoneDome.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83ED9F17182797CB004CDCCD"
-               BuildableName = "CBInsertScreenSDKTests.xctest"
-               BlueprintName = "CBInsertScreenSDKTests"
-               ReferencedContainer = "container:CBInsertScreen.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83F200B91820A11B0048B462"
-            BuildableName = "CBInsertScreen.app"
-            BlueprintName = "CBInsertScreen"
-            ReferencedContainer = "container:CBInsertScreen.xcodeproj">
+            BlueprintIdentifier = "83F2008518209EA20048B462"
+            BuildableName = "CBiPhoneDome.app"
+            BlueprintName = "CBiPhoneDome"
+            ReferencedContainer = "container:CBiPhoneDome.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83F200B91820A11B0048B462"
-            BuildableName = "CBInsertScreen.app"
-            BlueprintName = "CBInsertScreen"
-            ReferencedContainer = "container:CBInsertScreen.xcodeproj">
+            BlueprintIdentifier = "83F2008518209EA20048B462"
+            BuildableName = "CBiPhoneDome.app"
+            BlueprintName = "CBiPhoneDome"
+            ReferencedContainer = "container:CBiPhoneDome.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83F200B91820A11B0048B462"
-            BuildableName = "CBInsertScreen.app"
-            BlueprintName = "CBInsertScreen"
-            ReferencedContainer = "container:CBInsertScreen.xcodeproj">
+            BlueprintIdentifier = "83F2008518209EA20048B462"
+            BuildableName = "CBiPhoneDome.app"
+            BlueprintName = "CBiPhoneDome"
+            ReferencedContainer = "container:CBiPhoneDome.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

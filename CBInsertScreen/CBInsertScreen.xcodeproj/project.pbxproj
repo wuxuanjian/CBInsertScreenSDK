@@ -47,6 +47,21 @@
 		83ED9F01182778A5004CDCCD /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ED9EFF182778A5004CDCCD /* SDWebImageDownloaderOperation.m */; };
 		83ED9F04182778CF004CDCCD /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ED9F03182778CE004CDCCD /* SDImageCache.m */; };
 		83ED9F0618277C76004CDCCD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ED9F0518277C76004CDCCD /* ImageIO.framework */; };
+		83ED9F0C182797CB004CDCCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200BF1820A11B0048B462 /* Foundation.framework */; };
+		83ED9F11182797CB004CDCCD /* CBInsertScreenSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 83ED9F10182797CB004CDCCD /* CBInsertScreenSDK.h */; };
+		83ED9F13182797CB004CDCCD /* CBInsertScreenSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ED9F12182797CB004CDCCD /* CBInsertScreenSDK.m */; };
+		83ED9F1A182797CB004CDCCD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ED9F19182797CB004CDCCD /* XCTest.framework */; };
+		83ED9F1B182797CC004CDCCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200BF1820A11B0048B462 /* Foundation.framework */; };
+		83ED9F1C182797CC004CDCCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200BD1820A11B0048B462 /* UIKit.framework */; };
+		83ED9F1F182797CC004CDCCD /* libCBInsertScreenSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ED9F0B182797CB004CDCCD /* libCBInsertScreenSDK.a */; };
+		83ED9F25182797CC004CDCCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83ED9F23182797CC004CDCCD /* InfoPlist.strings */; };
+		83ED9F27182797CC004CDCCD /* CBInsertScreenSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ED9F26182797CC004CDCCD /* CBInsertScreenSDKTests.m */; };
+		83ED9F2E1827985D004CDCCD /* CBInsertScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E4D9B1823AA230048E06F /* CBInsertScreen.m */; };
+		83ED9F2F1827985D004CDCCD /* CBAdvertisementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ED9E8118274B77004CDCCD /* CBAdvertisementModel.m */; };
+		83ED9F301827985D004CDCCD /* CBInsertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FA3C9418225FB8000E0DC7 /* CBInsertUtils.m */; };
+		83ED9F311827985D004CDCCD /* CBScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831ADC1D1820FAE900211334 /* CBScreenView.m */; };
+		83ED9F321827985D004CDCCD /* CBGPSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 831ADC121820D6C700211334 /* CBGPSEngine.m */; };
+		83ED9F331827985D004CDCCD /* CBNetWorkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 831ADC091820CFC800211334 /* CBNetWorkEngine.m */; };
 		83F200BE1820A11B0048B462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200BD1820A11B0048B462 /* UIKit.framework */; };
 		83F200C01820A11B0048B462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200BF1820A11B0048B462 /* Foundation.framework */; };
 		83F200C21820A11B0048B462 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F200C11820A11B0048B462 /* CoreGraphics.framework */; };
@@ -60,6 +75,29 @@
 		83F200E61820A3770048B462 /* CBMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F200E41820A3770048B462 /* CBMainViewController.xib */; };
 		83FA3C9518225FB8000E0DC7 /* CBInsertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FA3C9418225FB8000E0DC7 /* CBInsertUtils.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83ED9F1D182797CC004CDCCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83F200B21820A11B0048B462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83ED9F0A182797CB004CDCCD;
+			remoteInfo = CBInsertScreenSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83ED9F09182797CB004CDCCD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				83ED9F11182797CB004CDCCD /* CBInsertScreenSDK.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		831ADBE11820C27F00211334 /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
@@ -134,6 +172,15 @@
 		83ED9F02182778CE004CDCCD /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
 		83ED9F03182778CE004CDCCD /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
 		83ED9F0518277C76004CDCCD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		83ED9F0B182797CB004CDCCD /* libCBInsertScreenSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCBInsertScreenSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		83ED9F0F182797CB004CDCCD /* CBInsertScreenSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBInsertScreenSDK-Prefix.pch"; sourceTree = "<group>"; };
+		83ED9F10182797CB004CDCCD /* CBInsertScreenSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBInsertScreenSDK.h; sourceTree = "<group>"; };
+		83ED9F12182797CB004CDCCD /* CBInsertScreenSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBInsertScreenSDK.m; sourceTree = "<group>"; };
+		83ED9F18182797CB004CDCCD /* CBInsertScreenSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBInsertScreenSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83ED9F19182797CB004CDCCD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		83ED9F22182797CC004CDCCD /* CBInsertScreenSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CBInsertScreenSDKTests-Info.plist"; sourceTree = "<group>"; };
+		83ED9F24182797CC004CDCCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83ED9F26182797CC004CDCCD /* CBInsertScreenSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBInsertScreenSDKTests.m; sourceTree = "<group>"; };
 		83F200BA1820A11B0048B462 /* CBInsertScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBInsertScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F200BD1820A11B0048B462 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83F200BF1820A11B0048B462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +203,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		83ED9F08182797CB004CDCCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ED9F0C182797CB004CDCCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83ED9F15182797CB004CDCCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ED9F1F182797CC004CDCCD /* libCBInsertScreenSDK.a in Frameworks */,
+				83ED9F1A182797CB004CDCCD /* XCTest.framework in Frameworks */,
+				83ED9F1C182797CC004CDCCD /* UIKit.framework in Frameworks */,
+				83ED9F1B182797CC004CDCCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83F200B71820A11B0048B462 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +417,42 @@
 			path = ThirdLib/SDWebImage;
 			sourceTree = "<group>";
 		};
+		83ED9F0D182797CB004CDCCD /* CBInsertScreenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				83ED9F10182797CB004CDCCD /* CBInsertScreenSDK.h */,
+				83ED9F12182797CB004CDCCD /* CBInsertScreenSDK.m */,
+				83ED9F0E182797CB004CDCCD /* Supporting Files */,
+			);
+			path = CBInsertScreenSDK;
+			sourceTree = "<group>";
+		};
+		83ED9F0E182797CB004CDCCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83ED9F0F182797CB004CDCCD /* CBInsertScreenSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83ED9F20182797CC004CDCCD /* CBInsertScreenSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				83ED9F26182797CC004CDCCD /* CBInsertScreenSDKTests.m */,
+				83ED9F21182797CC004CDCCD /* Supporting Files */,
+			);
+			path = CBInsertScreenSDKTests;
+			sourceTree = "<group>";
+		};
+		83ED9F21182797CC004CDCCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83ED9F22182797CC004CDCCD /* CBInsertScreenSDKTests-Info.plist */,
+				83ED9F23182797CC004CDCCD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		83F200B11820A11B0048B462 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +461,8 @@
 				83F200E11820A3440048B462 /* CBinsertScreenLib */,
 				83F200E01820A3340048B462 /* MainView */,
 				83F200C31820A11B0048B462 /* CBInsertScreen */,
+				83ED9F0D182797CB004CDCCD /* CBInsertScreenSDK */,
+				83ED9F20182797CC004CDCCD /* CBInsertScreenSDKTests */,
 				83F200BC1820A11B0048B462 /* Frameworks */,
 				83F200BB1820A11B0048B462 /* Products */,
 			);
@@ -368,6 +472,8 @@
 			isa = PBXGroup;
 			children = (
 				83F200BA1820A11B0048B462 /* CBInsertScreen.app */,
+				83ED9F0B182797CB004CDCCD /* libCBInsertScreenSDK.a */,
+				83ED9F18182797CB004CDCCD /* CBInsertScreenSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,6 +492,7 @@
 				83F200BD1820A11B0048B462 /* UIKit.framework */,
 				83F200BF1820A11B0048B462 /* Foundation.framework */,
 				83F200C11820A11B0048B462 /* CoreGraphics.framework */,
+				83ED9F19182797CB004CDCCD /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -480,6 +587,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		83ED9F0A182797CB004CDCCD /* CBInsertScreenSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83ED9F2C182797CC004CDCCD /* Build configuration list for PBXNativeTarget "CBInsertScreenSDK" */;
+			buildPhases = (
+				83ED9F07182797CB004CDCCD /* Sources */,
+				83ED9F08182797CB004CDCCD /* Frameworks */,
+				83ED9F09182797CB004CDCCD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CBInsertScreenSDK;
+			productName = CBInsertScreenSDK;
+			productReference = 83ED9F0B182797CB004CDCCD /* libCBInsertScreenSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		83ED9F17182797CB004CDCCD /* CBInsertScreenSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83ED9F2D182797CC004CDCCD /* Build configuration list for PBXNativeTarget "CBInsertScreenSDKTests" */;
+			buildPhases = (
+				83ED9F14182797CB004CDCCD /* Sources */,
+				83ED9F15182797CB004CDCCD /* Frameworks */,
+				83ED9F16182797CB004CDCCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83ED9F1E182797CC004CDCCD /* PBXTargetDependency */,
+			);
+			name = CBInsertScreenSDKTests;
+			productName = CBInsertScreenSDKTests;
+			productReference = 83ED9F18182797CB004CDCCD /* CBInsertScreenSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		83F200B91820A11B0048B462 /* CBInsertScreen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F200D71820A11B0048B462 /* Build configuration list for PBXNativeTarget "CBInsertScreen" */;
@@ -506,6 +648,11 @@
 				CLASSPREFIX = CB;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = CB;
+				TargetAttributes = {
+					83ED9F17182797CB004CDCCD = {
+						TestTargetID = 83F200B91820A11B0048B462;
+					};
+				};
 			};
 			buildConfigurationList = 83F200B51820A11B0048B462 /* Build configuration list for PBXProject "CBInsertScreen" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -520,11 +667,21 @@
 			projectRoot = "";
 			targets = (
 				83F200B91820A11B0048B462 /* CBInsertScreen */,
+				83ED9F0A182797CB004CDCCD /* CBInsertScreenSDK */,
+				83ED9F17182797CB004CDCCD /* CBInsertScreenSDKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		83ED9F16182797CB004CDCCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ED9F25182797CC004CDCCD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83F200B81820A11B0048B462 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,6 +700,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		83ED9F07182797CB004CDCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ED9F2E1827985D004CDCCD /* CBInsertScreen.m in Sources */,
+				83ED9F2F1827985D004CDCCD /* CBAdvertisementModel.m in Sources */,
+				83ED9F301827985D004CDCCD /* CBInsertUtils.m in Sources */,
+				83ED9F311827985D004CDCCD /* CBScreenView.m in Sources */,
+				83ED9F321827985D004CDCCD /* CBGPSEngine.m in Sources */,
+				83ED9F331827985D004CDCCD /* CBNetWorkEngine.m in Sources */,
+				83ED9F13182797CB004CDCCD /* CBInsertScreenSDK.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83ED9F14182797CB004CDCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ED9F27182797CC004CDCCD /* CBInsertScreenSDKTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83F200B61820A11B0048B462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -585,7 +764,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		83ED9F1E182797CC004CDCCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83ED9F0A182797CB004CDCCD /* CBInsertScreenSDK */;
+			targetProxy = 83ED9F1D182797CC004CDCCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		83ED9F23182797CC004CDCCD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83ED9F24182797CC004CDCCD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		83F200C61820A11B0048B462 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -597,6 +792,116 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		83ED9F28182797CC004CDCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/CBInsertScreenSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CBInsertScreenSDK/CBInsertScreenSDK-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		83ED9F29182797CC004CDCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/CBInsertScreenSDK.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CBInsertScreenSDK/CBInsertScreenSDK-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		83ED9F2A182797CC004CDCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CBInsertScreen.app/CBInsertScreen";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CBInsertScreenSDK/CBInsertScreenSDK-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "CBInsertScreenSDKTests/CBInsertScreenSDKTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		83ED9F2B182797CC004CDCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CBInsertScreen.app/CBInsertScreen";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CBInsertScreenSDK/CBInsertScreenSDK-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "CBInsertScreenSDKTests/CBInsertScreenSDKTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		83F200D51820A11B0048B462 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -682,6 +987,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		83ED9F2C182797CC004CDCCD /* Build configuration list for PBXNativeTarget "CBInsertScreenSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83ED9F28182797CC004CDCCD /* Debug */,
+				83ED9F29182797CC004CDCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83ED9F2D182797CC004CDCCD /* Build configuration list for PBXNativeTarget "CBInsertScreenSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83ED9F2A182797CC004CDCCD /* Debug */,
+				83ED9F2B182797CC004CDCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		83F200B51820A11B0048B462 /* Build configuration list for PBXProject "CBInsertScreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

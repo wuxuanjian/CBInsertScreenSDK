@@ -7,6 +7,8 @@
 //
 
 #import "CBMainViewController.h"
+#import "InsertScreen.h"
+
 
 @interface CBMainViewController ()
 
@@ -26,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CBInsertScreen* ins = [[CBInsertScreen alloc] init:SCREEN_DIRECTION_VERTICAL];
+    [ins openInserScreenSDK];
     // Do any additional setup after loading the view from its nib.
 }
 

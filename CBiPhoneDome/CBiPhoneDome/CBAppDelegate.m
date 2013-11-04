@@ -19,7 +19,7 @@
     
     CBMainViewController* mainView = [[CBMainViewController alloc] initWithNibName:@"CBMainViewController" bundle:nil];
     [self.window addSubview:mainView.view];
-    
+    self.window.rootViewController = mainView;
     [self.window makeKeyAndVisible];
     return YES;
 }
