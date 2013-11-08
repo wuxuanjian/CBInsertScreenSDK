@@ -25,7 +25,7 @@
 
 
 //*******************************
-#define IOS_IPHONE_STATE_BG_H        -10    //顶点偏移
+#define IOS_IPHONE_STATE_BG_H        10    //顶点偏移
 //iphone4
 #define IOS_IPHONE4_BG_VERTICAL_W    320  //iphone5宽度也是这个
 #define IOS_IPHONE4_BG_VERTICAL_H    480
@@ -33,7 +33,7 @@
 #define IOS_IPHONE5_BG_VERTICAL_H    568
 //ipad
 #define IOS_IPAD_BG_VERTICAL_W       768
-#define IOS_IPAD_BG_VERTICAL_H       1136
+#define IOS_IPAD_BG_VERTICAL_H       1024
 
 //iphone4
 #define IOS_IPHONE4_SCREENVIEW_W     ((320.0/10)*8)  //iphone4宽度也是这个

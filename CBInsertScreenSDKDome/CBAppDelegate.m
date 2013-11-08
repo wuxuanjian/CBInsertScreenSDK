@@ -8,6 +8,14 @@
 
 #import "CBAppDelegate.h"
 #import "CBDomeViewController.h"
+#import "InsertScreen.h"
+
+@interface CBAppDelegate()
+{
+    CBInsertScreen* insertScreen;
+}
+
+@end
 
 @implementation CBAppDelegate
 
@@ -20,6 +28,13 @@
     CBDomeViewController* mainView = [[CBDomeViewController alloc] initWithNibName:@"CBDomeViewController" bundle:nil];
     [self.window addSubview:mainView.view];
     self.window.rootViewController = mainView;
+    
+//    if (insertScreen == nil)
+//    {
+//        insertScreen = [[CBInsertScreen alloc] init];
+//    }
+//    
+//    [insertScreen openInserScreenSDK];
     
     [self.window makeKeyAndVisible];
     return YES;

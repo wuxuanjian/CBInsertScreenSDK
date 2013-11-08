@@ -16,10 +16,11 @@
 @end
 
 
-#define BG_COLOR_CLEAR   [UIColor clearColor]    //完全透明
+#define BG_COLOR_CLEAR   [UIColor brownColor]    //完全透明
 
 @interface CBScreenView : UIView <UIScrollViewDelegate>
 
+@property (nonatomic,strong) UIView*         showBgView;
 @property (nonatomic,strong) UIScrollView*   screenScrollView; //插屏view
 @property (nonatomic,strong) UIView*         closeBgView;
 @property (nonatomic,strong) UIPageControl*  screenPageControl;
@@ -35,8 +36,11 @@
 @property (nonatomic,readwrite)  NSInteger     focus; //焦点
 @property (nonatomic,assign)id<SCrreenViewDeleage> screenViewDeleage;
 
-
+-(void) notificationCenter;
 -(void) showImage;
 - (void)setFrameRect:(SCREEN_DIRECTION)direction;
+
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification;
 
 @end

@@ -11,19 +11,13 @@
 
 @interface CBInsertScreen : NSObject
 
-/*初始化函数
- *direction   屏幕方向
- */
-- (id)init:(SCREEN_DIRECTION)direction;
+
+- (id)init;
 
 /*
  * 打开sdk
  */
 -(void) openInserScreenSDK;
 
-/*设置当前屏幕的方向 是横屏 还是竖屏
- *direction   屏幕方向 
- */
--(void) setScreenSirection:(SCREEN_DIRECTION)direction;
 
 @end

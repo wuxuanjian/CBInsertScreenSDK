@@ -50,7 +50,7 @@
 {
     if (insertScreen == nil)
     {
-        insertScreen = [[CBInsertScreen alloc] init:direction];
+        insertScreen = [[CBInsertScreen alloc] init];
     }
     
     [insertScreen openInserScreenSDK];
@@ -101,61 +101,19 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {    
-    if (UIInterfaceOrientationIsPortrait(interfaceOrientation))
-    {
-        direction = SCREEN_DIRECTION_VERTICAL;
-        if(insertScreen != nil)
-        {
-            [insertScreen setScreenSirection:direction];
-        }
-        if(screenView != nil)
-        {
-            [screenView setFrameRect:SCREEN_DIRECTION_VERTICAL];
-        }
-    }
-    else
-    {
-        direction = SCREEN_DIRECTION_ACROSS;
-        if(insertScreen != nil)
-        {
-            [insertScreen setScreenSirection:direction];
-        }
-        if(screenView != nil)
-        {
-            [screenView setFrameRect:SCREEN_DIRECTION_ACROSS];
-        }
-    }
+
     
     return YES;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval) duration
 {
-    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation))
-    {
-        direction = SCREEN_DIRECTION_VERTICAL;
-        if(insertScreen != nil)
-        {
-            [insertScreen setScreenSirection:direction];
-        }
-        if(screenView != nil)
-        {
-            [screenView setFrameRect:SCREEN_DIRECTION_VERTICAL];
-        }
-    }
-    else
-    {
-        direction = SCREEN_DIRECTION_ACROSS;
-        if(insertScreen != nil)
-        {
-            [insertScreen setScreenSirection:direction];
-        }
-        if(screenView != nil)
-        {
-            [screenView setFrameRect:SCREEN_DIRECTION_ACROSS];
-        }
-    }
+
 }
+
+
+
+
 
 
 @end

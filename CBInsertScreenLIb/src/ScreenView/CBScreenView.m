@@ -13,11 +13,16 @@
 @interface CBScreenView()
 {
     SCREEN_DIRECTION screenDirection;  //屏幕横竖
+    
+    
+    CGAffineTransform rotationTransform;
+    
 }
 @end
 
 
 @implementation CBScreenView
+@synthesize showBgView = _showBgView;
 @synthesize screenScrollView = _screenScrollView;
 @synthesize screenPageControl = _screenPageControl;
 @synthesize imageArray = _imageArray;
@@ -48,37 +53,64 @@
     return self;
 }
 
+-(void) notificationCenter
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(detectShowOrientation)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:)
+												 name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+-(void)detectShowOrientation
+{
+    if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft ||[UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)
+    {//
+        NSLog(@"videolist 横屏");
+        screenDirection = SCREEN_DIRECTION_ACROSS;
+    }
+    else
+    {//
+        NSLog(@"videoList 竖屏");
+        screenDirection = SCREEN_DIRECTION_VERTICAL;
+    }
+//    [self setNeedsDisplay];
+    [self setFrameRect:screenDirection];
+}
+
+
 -(void) initViewDate
 {
-    screenDirection = SCREEN_DIRECTION_VERTICAL;
+    [self detectShowOrientation];
     _focus = 0;
     _imageArray = [[NSMutableArray alloc] initWithCapacity:3];
-    self.frame = CGRectMake(0, 0, backgroundframeW(screenDirection), backgroundframeH(screenDirection));
+    self.frame = CGRectMake(0, 0, backgroundframeW(SCREEN_DIRECTION_VERTICAL), backgroundframeH(SCREEN_DIRECTION_VERTICAL));
     self.backgroundColor = BG_COLOR_CLEAR;
     [self createScrollView];
 }
 
 - (void)setFrameRect:(SCREEN_DIRECTION)direction
 {
-    [self setNeedsDisplay];
-    screenDirection = direction;
-//    [_screenScrollView removeFromSuperview];
-    self.frame = CGRectMake(0, 0, backgroundframeW(screenDirection), backgroundframeH(screenDirection));
+//    self.frame = CGRectMake(0, 0, backgroundframeW(screenDirection), backgroundframeH(screenDirection));
     
     CGFloat dateViewH = screenViewH(screenDirection);
     CGFloat dateViewW = screenViewW(screenDirection);
     CGFloat dateViewX = screenViewX(screenDirection);
     CGFloat dateViewY = screenViewY(screenDirection);
-    _screenScrollView.frame = CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH);
+    _showBgView.frame = CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH);
+    
+    _screenScrollView.frame = CGRectMake(0, 0, dateViewW, dateViewH);
     [_screenScrollView setContentSize:CGSizeMake(dateViewW*3, dateViewH)];
     
     _oneScrollImageView.frame = CGRectMake(0*dateViewW, 0, dateViewW, dateViewH);
     _twoScrollImageView.frame = CGRectMake(1*dateViewW, 0, dateViewW, dateViewH);
     _threeScrollImageView.frame = CGRectMake(2*dateViewW, 0, dateViewW, dateViewH);
     
-    _screenPageControl.frame = CGRectMake(dateViewX,(dateViewY + dateViewH - 30), dateViewW, 30);
+    _screenPageControl.frame = CGRectMake(0,(dateViewH - 30), dateViewW, 30);
     [_screenScrollView setContentOffset:CGPointMake(dateViewW, 0.0)];
-    _closeBgView.frame = CGRectMake(dateViewX + dateViewW - 50, dateViewY, 50, 50) ;
+    _closeBgView.frame = CGRectMake(dateViewW - 50, 0, 50, 50) ;
     _adButton.frame = CGRectMake(1*dateViewW, 0, dateViewW, dateViewH);
 }
 
@@ -99,10 +131,13 @@
     _threeScrollImageView = [[UIImageView alloc] initWithFrame:CGRectMake(2*dateViewW, 0,  dateViewW, dateViewH)];
 //    _threeScrollImageView.backgroundColor = [UIColor blueColor];
     
+    //_showBgView
+    _showBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH)];
+    
     //scrollView
-    _screenScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH)];
+    _screenScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, dateViewW, dateViewH)];
     _screenScrollView.delegate = self;
-    _screenScrollView.frame = CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH);
+    _screenScrollView.frame = CGRectMake(0, 0, dateViewW, dateViewH);
 	[_screenScrollView setCanCancelContentTouches:NO];
 	_screenScrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 	_screenScrollView.clipsToBounds = YES;
@@ -121,28 +156,28 @@
     [_adButton addTarget:self action:@selector(adDownloadSelector) forControlEvents:UIControlEventTouchDown];
 //    _adButton.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
     [_screenScrollView addSubview:_adButton];
-    [self addSubview:_screenScrollView];
+    [_showBgView addSubview:_screenScrollView];
     
     
     
     //pageControl
-    _screenPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(dateViewX,(dateViewY + dateViewH - 30), dateViewW, 30)];
+    _screenPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,(dateViewH - 30), dateViewW, 30)];
     _screenPageControl.backgroundColor = [UIColor clearColor];
     _screenPageControl.currentPage = _focus;
     _screenPageControl.enabled = NO;
     _screenPageControl.numberOfPages = 0;
-    [self addSubview:_screenPageControl];
+    [_showBgView addSubview:_screenPageControl];
     [_screenScrollView setContentOffset:CGPointMake(dateViewW, 0.0)];
     [self closeButton];
+    
+    [self addSubview:_showBgView];
 }
 
 -(void) closeButton
 {
 //    CGFloat dateViewH = screenViewH(screenDirection);
     CGFloat dateViewW = screenViewW(screenDirection);
-    CGFloat dateViewX = screenViewX(screenDirection);
-    CGFloat dateViewY = screenViewY(screenDirection);
-    _closeBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewX + dateViewW - 50, dateViewY, 50, 50)];
+    _closeBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewW - 50, 0, 50, 50)];
     UIButton* closeBut = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [closeBut setTitle:@"X" forState:UIControlStateNormal];
     [closeBut setBackgroundImage:[UIImage imageNamed:@"ad_dtop_closebtn"] forState:UIControlStateNormal];
@@ -151,7 +186,7 @@
     [closeBut addTarget:self action:@selector(closeButtonSelector) forControlEvents:UIControlEventTouchDown];
     
     [_closeBgView addSubview:closeBut];
-    [self addSubview:_closeBgView];
+    [_showBgView addSubview:_closeBgView];
 }
 
 
@@ -309,6 +344,87 @@
         [_screenViewDeleage adDownSelector:nil];
     }
 }
+
+
+
+
+
+
+#pragma mark -
+#pragma mark 屏幕旋转
+
+#define RADIANS(degrees) ((degrees * (float)M_PI) / 180.0f)
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification
+{
+	if (!self.superview)
+    {
+		return;
+	}
+	
+	if ([self.superview isKindOfClass:[UIWindow class]])
+    {
+		[self setTransformForCurrentOrientation:YES];
+	} else
+    {
+		self.bounds = self.superview.bounds;
+		[self setNeedsDisplay];
+	}
+}
+
+- (void)setTransformForCurrentOrientation:(BOOL)animated
+{
+	UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+	NSInteger degrees = 0;
+	
+	// Stay in sync with the superview
+	if (self.superview)
+    {
+		self.bounds = self.superview.bounds;
+		[self setNeedsDisplay];
+	}
+	
+	if (UIInterfaceOrientationIsLandscape(orientation))
+    {
+		if (orientation == UIInterfaceOrientationLandscapeLeft)
+        {
+            degrees = -90;
+        }
+		else
+        {
+            degrees = 90;
+        }
+		// Window coordinates differ!
+		self.bounds = CGRectMake(0, 0, self.bounds.size.height, self.bounds.size.width);
+	}
+    else
+    {
+		if (orientation == UIInterfaceOrientationPortraitUpsideDown)
+        {
+            degrees = 180;
+        }
+		else
+        {
+            degrees = 0;
+        }
+	}
+	
+	rotationTransform = CGAffineTransformMakeRotation(RADIANS(degrees));
+    
+	if (animated)
+    {
+		[UIView beginAnimations:nil context:nil];
+	}
+	[self setTransform:rotationTransform];
+	if (animated)
+    {
+		[UIView commitAnimations];
+	}
+}
+
+
+
+
 
 
 @end
