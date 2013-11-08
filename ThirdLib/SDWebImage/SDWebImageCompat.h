@@ -1,21 +1,12 @@
-/*
- * This file is part of the SDWebImage package.
- * (c) Olivier Poitrey <rs@dailymotion.com>
- * (c) Jamie Pinkham
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+//
+//  SDWebImageCompat.h
+//  SDWebImageCompat
+//
+//  Created by Jamie Pinkham on 3/15/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
 
 #import <TargetConditionals.h>
-
-#ifdef __OBJC_GC__
-#error SDWebImage does not support Objective-C Garbage Collection
-#endif
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
-#error SDWebImage doesn't support Deployement Target version < 5.0
-#endif
 
 #if !TARGET_OS_IPHONE
 #import <AppKit/AppKit.h>
@@ -28,27 +19,3 @@
 #else
 #import <UIKit/UIKit.h>
 #endif
-
-#if OS_OBJECT_USE_OBJC
-    #undef SDDispatchQueueRelease
-    #undef SDDispatchQueueSetterSementics
-    #define SDDispatchQueueRelease(q)
-    #define SDDispatchQueueSetterSementics strong
-#else
-    #undef SDDispatchQueueRelease
-    #undef SDDispatchQueueSetterSementics
-    #define SDDispatchQueueRelease(q) (dispatch_release(q))
-    #define SDDispatchQueueSetterSementics assign
-#endif
-
-extern inline UIImage *SDScaledImageForKey(NSString *key, UIImage *image);
-
-#define dispatch_main_sync_safe(block)\
-    if ([NSThread isMainThread])\
-    {\
-        block();\
-    }\
-    else\
-    {\
-        dispatch_sync(dispatch_get_main_queue(), block);\
-    }

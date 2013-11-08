@@ -232,43 +232,43 @@
 
 -(void) showImage
 {
-//    if([_imageArray count] > [self oneImageItem])
-//    {
-//        NSString* urlStr = [_imageArray objectAtIndex:[self oneImageItem]];
-//        NSURL *url = [NSURL URLWithString:urlStr];
-//        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
-//    }
-//    
-//    if([_imageArray count] > [self twoImageItem])
-//    {
-//        NSString* urlStr = [_imageArray objectAtIndex:[self twoImageItem]];
-//        NSURL *url = [NSURL URLWithString:urlStr];
-//        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
-//    }
-//    if([_imageArray count] > [self threeImageItem])
-//    {
-//        NSString* urlStr = [_imageArray objectAtIndex:[self threeImageItem]];
-//        NSURL *url = [NSURL URLWithString:urlStr];
-//        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
-//    }
-    
     if([_imageArray count] > [self oneImageItem])
     {
         NSString* urlStr = [_imageArray objectAtIndex:[self oneImageItem]];
-        _oneScrollImageView.image = [UIImage imageNamed:urlStr];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     
     if([_imageArray count] > [self twoImageItem])
     {
         NSString* urlStr = [_imageArray objectAtIndex:[self twoImageItem]];
-        _twoScrollImageView.image = [UIImage imageNamed:urlStr];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     if([_imageArray count] > [self threeImageItem])
     {
         NSString* urlStr = [_imageArray objectAtIndex:[self threeImageItem]];
-        _threeScrollImageView.image = [UIImage imageNamed:urlStr];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     
+//    if([_imageArray count] > [self oneImageItem])
+//    {
+//        NSString* urlStr = [_imageArray objectAtIndex:[self oneImageItem]];
+//        _oneScrollImageView.image = [UIImage imageNamed:urlStr];
+//    }
+//    
+//    if([_imageArray count] > [self twoImageItem])
+//    {
+//        NSString* urlStr = [_imageArray objectAtIndex:[self twoImageItem]];
+//        _twoScrollImageView.image = [UIImage imageNamed:urlStr];
+//    }
+//    if([_imageArray count] > [self threeImageItem])
+//    {
+//        NSString* urlStr = [_imageArray objectAtIndex:[self threeImageItem]];
+//        _threeScrollImageView.image = [UIImage imageNamed:urlStr];
+//    }
+//    
     if([_imageArray count] > 0)
     {
         _screenPageControl.currentPage = _focus;

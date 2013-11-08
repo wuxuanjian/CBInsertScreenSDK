@@ -69,13 +69,13 @@
 -(void) showScreenView
 {
     _screenView = [[CBScreenView alloc] init];
-//    [_screenView.imageArray addObject:@"http://a.hiphotos.baidu.com/album/w%3D2048/sign=83ccb19ef91986184147e8847ed52c73/a1ec08fa513d269769393ca254fbb2fb4216d862.jpg"];
-//    [_screenView.imageArray addObject:@"http://h.hiphotos.baidu.com/album/w%3D2048/sign=730e7fdf95eef01f4d141fc5d4c69825/94cad1c8a786c917b8bf9482c83d70cf3ac757c9.jpg"];
-//    [_screenView.imageArray addObject:@"http://e.hiphotos.baidu.com/album/w%3D2048/sign=0eb3e73dd6ca7bcb7d7bc02f8a316963/9213b07eca806538706a7aed96dda144ac348248.jpg"];
+    [_screenView.imageArray addObject:@"http://a.hiphotos.baidu.com/album/w%3D2048/sign=83ccb19ef91986184147e8847ed52c73/a1ec08fa513d269769393ca254fbb2fb4216d862.jpg"];
+    [_screenView.imageArray addObject:@"http://h.hiphotos.baidu.com/album/w%3D2048/sign=730e7fdf95eef01f4d141fc5d4c69825/94cad1c8a786c917b8bf9482c83d70cf3ac757c9.jpg"];
+    [_screenView.imageArray addObject:@"http://e.hiphotos.baidu.com/album/w%3D2048/sign=0eb3e73dd6ca7bcb7d7bc02f8a316963/9213b07eca806538706a7aed96dda144ac348248.jpg"];
      _screenView.screenViewDeleage = self;
-    [_screenView.imageArray addObject:@"500-500_1.jpg"];
-    [_screenView.imageArray addObject:@"500-500_2.jpg"];
-    [_screenView.imageArray addObject:@"500-500_3.jpg"];
+//    [_screenView.imageArray addObject:@"500-500_1.jpg"];
+//    [_screenView.imageArray addObject:@"500-500_2.jpg"];
+//    [_screenView.imageArray addObject:@"500-500_3.jpg"];
     [_screenView showImage];
     [_screenView setFrameRect:_screenDirection];
     [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:_screenView];

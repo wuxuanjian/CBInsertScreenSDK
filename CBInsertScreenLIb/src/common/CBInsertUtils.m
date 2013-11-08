@@ -37,12 +37,12 @@
 
 //iphone4
 #define IOS_IPHONE4_SCREENVIEW_W     ((320.0/10)*8)  //iphone4宽度也是这个
-#define IOS_IPHONE4_SCREENVIEW_H     ((480.0/10)*8)  //iphone4高度也是这个
+#define IOS_IPHONE4_SCREENVIEW_H     ((320.0/10)*8)  //iphone4高度也是这个
 //iphone5
-#define IOS_IPHONE5_BG_SCREENVIEW_H  ((568.0/10)*8)  //iphone5高度也是这个
+#define IOS_IPHONE5_BG_SCREENVIEW_H  ((320.0/10)*8)  //iphone5高度也是这个
 //ipad
 #define IOS_IPAD_SCREENVIEW_H        ((768/10.0)*8) //ipad高度也是这个
-#define IOS_IPAD_SCREENVIEW_W        ((1136.0/10)*8)  //ipad款度也是这个
+#define IOS_IPAD_SCREENVIEW_W        ((768.0/10)*8)  //ipad款度也是这个
 //*******************************
 
 //*******************************
