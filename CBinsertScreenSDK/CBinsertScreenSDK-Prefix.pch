@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CBinsertScreenSDK' target in the 'CBinsertScreenSDK' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
