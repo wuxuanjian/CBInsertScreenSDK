@@ -16,7 +16,7 @@
 @end
 
 
-#define BG_COLOR_CLEAR   [UIColor brownColor]    //完全透明
+#define BG_COLOR_CLEAR   [UIColor clearColor]    //完全透明
 
 @interface CBScreenView : UIView <UIScrollViewDelegate>
 

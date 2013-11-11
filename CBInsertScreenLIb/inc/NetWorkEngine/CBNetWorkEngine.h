@@ -14,5 +14,6 @@ typedef void (^CBNetWorkError)(NSError* err);
 
 -(MKNetworkOperation*) postDataToServer:(CBNetWorkComplete)completeblock netWorkError:(CBNetWorkError)errorblock;
 
+-(MKNetworkOperation*) postInstallation:(CBAdvertisementModel*)adInst;
 
 @end

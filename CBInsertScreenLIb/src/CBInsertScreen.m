@@ -11,18 +11,19 @@
 
 @interface CBInsertScreen() <SCrreenViewDeleage>
 {
-
+    
 }
 @property (nonatomic,strong) CBGPSEngine*  gpsEngine;      //定位引擎
 @property (nonatomic,strong) CBScreenView* screenView;    //view
 @property (nonatomic,strong) CBNetWorkEngine* networkEng; //网络
+@property (nonatomic,strong) NSMutableArray* adArray;
 @end
 
 @implementation CBInsertScreen
 @synthesize  gpsEngine = _gpsEngine;      //定位引擎
 @synthesize screenView = _screenView;    //view
 @synthesize networkEng = _networkEng; //网络
-
+@synthesize adArray = _adArray; //返回的广告数组广告
 - (id)init
 {
     self = [super init];
@@ -52,11 +53,13 @@
 
 -(void) showScreenView
 {
-    _screenView = [[CBScreenView alloc] init];
+    if(_screenView)
+    {
+        _screenView = [[CBScreenView alloc] init];
+    }
     [_screenView notificationCenter];
-    [_screenView.imageArray addObject:@"http://a.hiphotos.baidu.com/album/w%3D2048/sign=83ccb19ef91986184147e8847ed52c73/a1ec08fa513d269769393ca254fbb2fb4216d862.jpg"];
-    [_screenView.imageArray addObject:@"http://h.hiphotos.baidu.com/album/w%3D2048/sign=730e7fdf95eef01f4d141fc5d4c69825/94cad1c8a786c917b8bf9482c83d70cf3ac757c9.jpg"];
-    [_screenView.imageArray addObject:@"http://e.hiphotos.baidu.com/album/w%3D2048/sign=0eb3e73dd6ca7bcb7d7bc02f8a316963/9213b07eca806538706a7aed96dda144ac348248.jpg"];
+    [_screenView.imageArray removeAllObjects];
+    [_screenView.imageArray addObjectsFromArray:_adArray];
      _screenView.screenViewDeleage = self;
 //    [_screenView.imageArray addObject:@"500-500_1.jpg"];
 //    [_screenView.imageArray addObject:@"500-500_2.jpg"];
@@ -82,6 +85,47 @@
 
 -(void) adToobtainComplete:(NSString*)responseString
 {
+//    [{"position":"left",
+//        "anonymous":"yes",
+//        "appName":"sohu游戏中心",
+//        "isMorrowStart":"no",
+//        "packageName":"",
+//        "clean":"no",
+//        "adId":"0050",
+//        "clickText":"",
+//        "appURL":"https://itunes.apple.com/cn/app/sou-hu-ying-yong-zhong-xin/id495099169?mt=8",
+//        "powerclick":"yes",
+//        "pic3URL":"http://myimages.qiniudn.com/1382602663849.jpg",
+//        "appDesc1":""}]
+    [_adArray removeAllObjects];
+   _adArray = [[NSMutableArray alloc] initWithCapacity:3];
+    id obj = [responseString JSONValue];
+    if (obj && [obj isKindOfClass:[NSArray class]])
+    {
+        NSArray* arr = obj;
+        for (int i = 0; i < [arr count]; i++)
+        {
+            NSDictionary* dic = [arr objectAtIndex:i];
+            CBAdvertisementModel* adModel = [[CBAdvertisementModel alloc] init];
+            adModel.position = [dic objectForKey:@"position"];
+            adModel.anonymous = [dic objectForKey:@"anonymous"];
+            adModel.appName = [dic objectForKey:@"appName"];
+            adModel.isMorrowStart = [dic objectForKey:@"isMorrowStart"];
+            adModel.packageName = [dic objectForKey:@"packageName"];
+            adModel.clean = [dic objectForKey:@"clean"];
+            adModel.adId = [dic objectForKey:@"adId"];
+            adModel.clickText = [dic objectForKey:@"clickText"];
+            adModel.appURL = [dic objectForKey:@"appURL"];
+            adModel.powerclick = [dic objectForKey:@"powerclick"];
+            adModel.pic3URL = [dic objectForKey:@"pic3URL"];
+            adModel.appDesc1 = [dic objectForKey:@"appDesc1"];
+            if (i == ([arr count] - 1))
+            {
+                setCbAdId(adModel.adId);
+            }
+            [_adArray addObject:adModel];
+        }
+    }
     [self showScreenView]; //展示页面
 }
 
@@ -91,7 +135,8 @@
 //点击广告返回
 -(void) adDownSelector:(CBAdvertisementModel*)adItem
 {
-    
+    [_networkEng postInstallation:adItem];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:adItem.appURL]];
 }
 
 

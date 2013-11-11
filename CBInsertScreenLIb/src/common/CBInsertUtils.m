@@ -46,11 +46,11 @@
 //*******************************
 
 //*******************************
-#define CB_IOS_SDK_APPID             @"appid"         //appId：后期分配的应用唯一标示码
+#define CB_IOS_SDK_APPID             @"09090200"         //appId：后期分配的应用唯一标示码
 #define CB_IOS_SDK_SENDCOUNT         @"3"             //sendCount：需要获取的广告数
-#define CB_IOS_SDK_ADTYPE            @"1"             //adType：广告类型
-#define CB_IOS_SDK_PACKAGENAME       @"packageName"   //packageName：应用唯一标示
-#define CB_IOS_SDK_VERSION           @"1.0.0"           //sdkVersion：sdk版本号
+#define CB_IOS_SDK_ADTYPE            @"chaping"             //adType：广告类型
+#define CB_IOS_SDK_PACKAGENAME       @"com.test.up_soft"   //packageName：应用唯一标示
+#define CB_IOS_SDK_VERSION           @"1.1.4"           //sdkVersion：sdk版本号
 //*******************************
 
 //***********************************************************************************

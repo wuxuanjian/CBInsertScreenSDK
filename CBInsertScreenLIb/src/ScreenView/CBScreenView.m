@@ -68,12 +68,12 @@
 {
     if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft ||[UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)
     {//
-        NSLog(@"videolist 横屏");
+        DLog(@"videolist 横屏");
         screenDirection = SCREEN_DIRECTION_ACROSS;
     }
     else
     {//
-        NSLog(@"videoList 竖屏");
+        DLog(@"videoList 竖屏");
         screenDirection = SCREEN_DIRECTION_VERTICAL;
     }
 //    [self setNeedsDisplay];
@@ -269,21 +269,21 @@
 {
     if([_imageArray count] > [self oneImageItem])
     {
-        NSString* urlStr = [_imageArray objectAtIndex:[self oneImageItem]];
-        NSURL *url = [NSURL URLWithString:urlStr];
+        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self oneImageItem]];
+        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
         [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     
     if([_imageArray count] > [self twoImageItem])
     {
-        NSString* urlStr = [_imageArray objectAtIndex:[self twoImageItem]];
-        NSURL *url = [NSURL URLWithString:urlStr];
+        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self twoImageItem]];
+        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
         [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     if([_imageArray count] > [self threeImageItem])
     {
-        NSString* urlStr = [_imageArray objectAtIndex:[self threeImageItem]];
-        NSURL *url = [NSURL URLWithString:urlStr];
+        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self threeImageItem]];
+        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
         [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
     }
     
@@ -334,6 +334,15 @@
 
 -(void)closeButtonSelector
 {
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(detectShowOrientation)
+//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:)
+//												 name:UIDeviceOrientationDidChangeNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeFromSuperview];
 }
 
@@ -341,7 +350,8 @@
 {
     if(_screenViewDeleage && [_screenViewDeleage respondsToSelector:@selector(adDownSelector:)])
     {
-        [_screenViewDeleage adDownSelector:nil];
+        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:_focus];
+        [_screenViewDeleage adDownSelector:adModel];
     }
 }
 
@@ -357,6 +367,7 @@
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification
 {
+    DLog(@"device 屏幕旋转");
 	if (!self.superview)
     {
 		return;

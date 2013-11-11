@@ -19,5 +19,7 @@
  */
 -(void) openInserScreenSDK;
 
+//点击广告返回
+-(void) adDownSelector:(CBAdvertisementModel*)adItem;
 
 @end

@@ -9,6 +9,8 @@
 #import "CBinsertScreenSDK.h"
 #import "InsertScreen.h"
 
+static CBinsertScreenSDK*  inssdk = nil;
+
 @interface CBinsertScreenSDK()
 {
     CBInsertScreen* insertScreen;
@@ -19,7 +21,10 @@
 
 +(CBinsertScreenSDK*) insertScreenSDK
 {
-    CBinsertScreenSDK* inssdk = [[CBinsertScreenSDK alloc] init];
+    if(inssdk == nil)
+    {
+        inssdk = [[CBinsertScreenSDK alloc] init];
+    }
     [inssdk openInserScreen];
     return inssdk;
 }

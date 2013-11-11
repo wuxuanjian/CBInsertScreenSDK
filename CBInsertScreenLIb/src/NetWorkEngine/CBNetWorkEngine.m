@@ -21,7 +21,8 @@
     //sendCount：需要获取的广告数
     NSString* sendCount = cbSendCount();
     //adId：上一次获取的最后一个广告的ID
-    NSString* adid = getCbAdId();
+    NSString* adid = @"";
+//    NSString* adid = getCbAdId();
     //adType：广告类型
     NSString* adtype = cbAdType();
     
@@ -49,8 +50,23 @@
     //定位市名称
     NSString* city = cbCityStr();
     
+//    http://push.hi6yx.com:8090/androidService/advertisingIos/findAdverByClient.h?
+//    appId=09090200
+//    &uuid=865864011308056
+//    &ua=ZTE%20V970
+//    &os=4.0.4
+//    &safe=1
+//    &versionCode=1.0
+//    &packageName=com.test.up_soft
+//    &adType=chaping
+//    &sdkVersion=1.1.4
+//    &province=%E5%8C%97%E4%BA%AC
+//    &city=%E5%8C%97%E4%BA%AC
+//    &longitude=116.365744
+//    &latitude=39.952118
+//    &sendCount=9
+//    &adId=
     
-//    http://push.hi6yx.com:8090/androidService/advertisingIos/findAdverByClient.h?appId=05010100&uuid=865864011308056&ua=ZTE%20V970&os=4.0.4&safe=1&versionCode=1.0&packageName=com.test.up_soft&adType=chaping&sdkVersion=1.1.4&province=%E5%8C%97%E4%BA%AC&city=%E5%8C%97%E4%BA%AC&longitude=116.365744&latitude=39.952118&sendCount=9&adId=
     
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                 appid,@"appId",
@@ -71,12 +87,9 @@
                                 sendCount,@"sendCount",
                                 adid,@"adId",
                                 nil];
-    
-    
-    
     MKNetworkOperation *op = [self operationWithPath:@"androidService/advertisingIos/findAdverByClient.h"
-                                              params:dic                                          httpMethod:@"POST"];
-    
+                                              params:dic
+                                          httpMethod:@"POST"];
     //[op setUsername:@"bobs@thga.me" password:@"12345678"];
     
     [op onCompletion:^(MKNetworkOperation *operation)
@@ -96,5 +109,50 @@
     return op;
 }
 
+-(MKNetworkOperation*) postInstallation:(CBAdvertisementModel*)adInst
+{
+//    http://push.hi6yx.com:8090/androidService/clientStatusVisitIos/add.h?
+//    uuid=01010101
+//    &appId=01010101
+//    &action=push
+//    &adId=0006
+//    &adType=push
+    //appId：后期分配的应用唯一标示码
+    NSString* appid = cbAppId();
+    //openUdid:可以替代UDID
+    NSString* openUdid = cbOpenUDid();
+    //idfa:  广告标示符
+    NSString* idfa = cbIdfa();
+    
+    //adType：广告类型
+    NSString* adtype = cbAdType();
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                appid,@"appId",
+                                openUdid,@"uuid",
+                                idfa,@"idfa",
+                                @"download",@"action",   //下载事件
+                                adInst.adId,@"adId",
+                                adtype,@"adType",
+                                nil];
+    MKNetworkOperation *op = [self operationWithPath:@"androidService/clientStatusVisitIos/add.h"
+                                              params:dic
+                                          httpMethod:@"POST"];
+    //[op setUsername:@"bobs@thga.me" password:@"12345678"];
+    
+    [op onCompletion:^(MKNetworkOperation *operation)
+     {
+         NSString* responseStr = operation.responseString;
+         DLog(@"%@", responseStr);
+     }
+             onError:^(NSError *error)
+     {
+         DLog(@"%@", error);
+     }];
+    [self enqueueOperation:op];
+    
+    return op;
+
+    
+}
 
 @end

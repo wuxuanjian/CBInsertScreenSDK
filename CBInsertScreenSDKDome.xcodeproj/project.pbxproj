@@ -16,6 +16,7 @@
 		8334D48A182CB33200AD765A /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8334D482182CB33200AD765A /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8334D48B182CB33200AD765A /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8334D485182CB33200AD765A /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8334D48C182CB33200AD765A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8334D487182CB33200AD765A /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		834DC70A1830C96A00705141 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 834DC7091830C96A00705141 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		83AAF56A182A16B600E0611C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AAF569182A16B600E0611C /* UIKit.framework */; };
 		83AAF56C182A16B600E0611C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AAF56B182A16B600E0611C /* Foundation.framework */; };
 		83AAF56E182A16B600E0611C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AAF56D182A16B600E0611C /* CoreGraphics.framework */; };
@@ -91,6 +92,8 @@
 		8334D485182CB33200AD765A /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		8334D486182CB33200AD765A /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		8334D487182CB33200AD765A /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		834DC7081830C96A00705141 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		834DC7091830C96A00705141 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		83AAF566182A16B600E0611C /* CBInsertScreenSDKDome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBInsertScreenSDKDome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AAF569182A16B600E0611C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83AAF56B182A16B600E0611C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -205,6 +208,15 @@
 				833281D1182CF1C5005BAB1C /* CBinsertScreenSDK-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		834DC7071830C96A00705141 /* jsonkit */ = {
+			isa = PBXGroup;
+			children = (
+				834DC7081830C96A00705141 /* JSONKit.h */,
+				834DC7091830C96A00705141 /* JSONKit.m */,
+			);
+			path = jsonkit;
 			sourceTree = "<group>";
 		};
 		83AAF55D182A16B600E0611C = {
@@ -415,6 +427,7 @@
 		83AAF5AE182A176C00E0611C /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				834DC7071830C96A00705141 /* jsonkit */,
 				83AAF5AF182A176C00E0611C /* MKNetworkKit */,
 				83AAF5C5182A176C00E0611C /* OpenUDID */,
 				83AAF5C8182A176C00E0611C /* SDWebImage */,
@@ -634,6 +647,7 @@
 				8334D48A182CB33200AD765A /* SDWebImageManager.m in Sources */,
 				8334D48B182CB33200AD765A /* UIButton+WebCache.m in Sources */,
 				8334D48C182CB33200AD765A /* UIImageView+WebCache.m in Sources */,
+				834DC70A1830C96A00705141 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +793,7 @@
 				833281D7182CF1C5005BAB1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83AAF561182A16B600E0611C /* Build configuration list for PBXProject "CBInsertScreenSDKDome" */ = {
 			isa = XCConfigurationList;
