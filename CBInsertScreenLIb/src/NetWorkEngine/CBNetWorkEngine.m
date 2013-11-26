@@ -10,7 +10,7 @@
 
 @implementation CBNetWorkEngine
 
--(MKNetworkOperation*) postDataToServer:(CBNetWorkComplete)completeblock netWorkError:(CBNetWorkError)errorblock
+-(MKNetworkOperation*) postDataToServer:(CBNetWorkComplete)completeblock netWorkError:(CBNetWorkError)errorblock first:(BOOL)oneFirst
 {
     //appId：后期分配的应用唯一标示码
     NSString* appid = cbAppId();
@@ -20,9 +20,13 @@
     NSString* macaddress = cbMacaddress();
     //sendCount：需要获取的广告数
     NSString* sendCount = cbSendCount();
+    if(oneFirst == NO)
+    {
+        sendCount = @"1";
+    }
     //adId：上一次获取的最后一个广告的ID
-    NSString* adid = @"";
-//    NSString* adid = getCbAdId();
+//    NSString* adid = @"";
+    NSString* adid = getCbAdId();
     //adType：广告类型
     NSString* adtype = cbAdType();
     

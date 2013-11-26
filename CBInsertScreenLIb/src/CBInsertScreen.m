@@ -32,14 +32,16 @@
         _gpsEngine = [[CBGPSEngine alloc] init];
         _screenView = [[CBScreenView alloc] init];
         [self gpsLocation];
+        _adArray = [[NSMutableArray alloc] initWithCapacity:3];
         _networkEng = [[CBNetWorkEngine alloc] initWithHostName:NET_WORK_SERVER_URL customHeaderFields:nil];
     }
     return self;
 }
 
--(void) openInserScreenSDK
+-(void) loadAdData
 {
-    [self adToObtain];
+    setCbAdId(@"");
+    [self adToObtain:YES];
 }
 
 
@@ -68,10 +70,11 @@
 //    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:_screenView];
     [[UIApplication sharedApplication].keyWindow addSubview:_screenView];
     [_screenView deviceOrientationDidChange:[NSNotificationCenter defaultCenter]];
+    [self adToObtain:NO];
 }
 
 //广告获取
--(void) adToObtain
+-(void) adToObtain:(BOOL)theFirst
 {
     [_networkEng postDataToServer:^(NSString *responseString)
     {
@@ -80,7 +83,8 @@
     netWorkError:^(NSError *err)
     {
         
-    }];
+    }
+    first:theFirst];
 }
 
 -(void) adToobtainComplete:(NSString*)responseString
@@ -97,8 +101,10 @@
 //        "powerclick":"yes",
 //        "pic3URL":"http://myimages.qiniudn.com/1382602663849.jpg",
 //        "appDesc1":""}]
-    [_adArray removeAllObjects];
-   _adArray = [[NSMutableArray alloc] initWithCapacity:3];
+    if([_adArray count] > 0)
+    {
+        [_adArray removeObjectAtIndex:0];
+    }
     id obj = [responseString JSONValue];
     if (obj && [obj isKindOfClass:[NSArray class]])
     {
@@ -126,7 +132,7 @@
             [_adArray addObject:adModel];
         }
     }
-    [self showScreenView]; //展示页面
+//    [self showScreenView]; //展示页面
 }
 
 

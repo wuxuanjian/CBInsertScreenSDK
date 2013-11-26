@@ -15,11 +15,14 @@
 - (id)init;
 
 /*
- * 打开sdk
+ * 获取广告数据
  */
--(void) openInserScreenSDK;
+-(void) loadAdData;
 
 //点击广告返回
 -(void) adDownSelector:(CBAdvertisementModel*)adItem;
+
+//展示sdk
+-(void) showScreenView;
 
 @end

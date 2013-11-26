@@ -108,9 +108,9 @@
     _twoScrollImageView.frame = CGRectMake(1*dateViewW, 0, dateViewW, dateViewH);
     _threeScrollImageView.frame = CGRectMake(2*dateViewW, 0, dateViewW, dateViewH);
     
-    _screenPageControl.frame = CGRectMake(0,(dateViewH - 30), dateViewW, 30);
+    _screenPageControl.frame = CGRectMake(0, dateViewH, dateViewW, 30);
     [_screenScrollView setContentOffset:CGPointMake(dateViewW, 0.0)];
-    _closeBgView.frame = CGRectMake(dateViewW - 50, 0, 50, 50) ;
+    _closeBgView.frame = CGRectMake(dateViewW - (dateViewW/10 + 3), 3, dateViewW/10, dateViewW/10) ;
     _adButton.frame = CGRectMake(1*dateViewW, 0, dateViewW, dateViewH);
 }
 
@@ -161,7 +161,7 @@
     
     
     //pageControl
-    _screenPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,(dateViewH - 30), dateViewW, 30)];
+    _screenPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, dateViewH , dateViewW, 30)];
     _screenPageControl.backgroundColor = [UIColor clearColor];
     _screenPageControl.currentPage = _focus;
     _screenPageControl.enabled = NO;
@@ -177,12 +177,12 @@
 {
 //    CGFloat dateViewH = screenViewH(screenDirection);
     CGFloat dateViewW = screenViewW(screenDirection);
-    _closeBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewW - 50, 0, 50, 50)];
+    _closeBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewW - (dateViewW/10 + 3), 3, dateViewW/10, dateViewW/10)];
     UIButton* closeBut = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [closeBut setTitle:@"X" forState:UIControlStateNormal];
     [closeBut setBackgroundImage:[UIImage imageNamed:@"ad_dtop_closebtn"] forState:UIControlStateNormal];
     [closeBut setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    closeBut.frame = CGRectMake(0, 0, 50, 50);
+    closeBut.frame = CGRectMake(0, 0, dateViewW/10, dateViewW/10);
     [closeBut addTarget:self action:@selector(closeButtonSelector) forControlEvents:UIControlEventTouchDown];
     
     [_closeBgView addSubview:closeBut];

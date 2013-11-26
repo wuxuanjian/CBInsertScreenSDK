@@ -45,6 +45,8 @@
 #define IOS_IPAD_SCREENVIEW_W        ((768.0/10)*8)  //ipad款度也是这个
 //*******************************
 
+
+
 //*******************************
 #define CB_IOS_SDK_APPID             @"09090200"         //appId：后期分配的应用唯一标示码
 #define CB_IOS_SDK_SENDCOUNT         @"3"             //sendCount：需要获取的广告数

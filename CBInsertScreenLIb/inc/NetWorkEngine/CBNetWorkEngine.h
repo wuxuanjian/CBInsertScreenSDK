@@ -12,7 +12,7 @@ typedef void (^CBNetWorkComplete)(NSString* responseString);
 typedef void (^CBNetWorkError)(NSError* err);
 @interface CBNetWorkEngine : MKNetworkEngine
 
--(MKNetworkOperation*) postDataToServer:(CBNetWorkComplete)completeblock netWorkError:(CBNetWorkError)errorblock;
+-(MKNetworkOperation*) postDataToServer:(CBNetWorkComplete)completeblock netWorkError:(CBNetWorkError)errorblock first:(BOOL)oneFirst;
 
 -(MKNetworkOperation*) postInstallation:(CBAdvertisementModel*)adInst;
 

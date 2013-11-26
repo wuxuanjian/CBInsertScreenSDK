@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [CBinsertScreenSDK insertScreenSDK];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -43,7 +43,7 @@
 
 - (IBAction)textButton:(id)sender
 {
-    [CBinsertScreenSDK insertScreenSDK];
+    [CBinsertScreenSDK showInsertScreenSDK];
 }
 
 - (IBAction)textButton1:(id)sender

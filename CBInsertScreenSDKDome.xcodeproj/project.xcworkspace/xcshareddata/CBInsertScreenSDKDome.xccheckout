@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D6DE5885-5DE5-445F-8F66-0FCF984C7D4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CBInsertScreenSDKDome</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F3A56885-7A82-43DA-91A7-B4CE51113A49</key>
+		<string>https://github.com/wuxuanjian/CBInsertScreenSDK.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CBInsertScreenSDKDome.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F3A56885-7A82-43DA-91A7-B4CE51113A49</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wuxuanjian/CBInsertScreenSDK.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F3A56885-7A82-43DA-91A7-B4CE51113A49</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F3A56885-7A82-43DA-91A7-B4CE51113A49</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CBInsertScreenSDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>

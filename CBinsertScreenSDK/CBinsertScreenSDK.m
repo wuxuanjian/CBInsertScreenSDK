@@ -24,20 +24,33 @@ static CBinsertScreenSDK*  inssdk = nil;
     if(inssdk == nil)
     {
         inssdk = [[CBinsertScreenSDK alloc] init];
+        [inssdk loadAdData]; //初始化sdk 获取广告数据
     }
-    [inssdk openInserScreen];
     return inssdk;
 }
 
--(void) openInserScreen
++(void) showInsertScreenSDK
+{
+    [CBinsertScreenSDK insertScreenSDK];
+    [inssdk showInsertScreen];
+}
+
+-(void) loadAdData
 {
     if (insertScreen == nil)
     {
         insertScreen = [[CBInsertScreen alloc] init];
     }
-    
-    [insertScreen openInserScreenSDK];
+    [insertScreen loadAdData];
+}
 
+-(void) showInsertScreen
+{
+    if(insertScreen && insertScreen != nil)
+    {
+        [insertScreen showScreenView];
+    }
+    
 }
 
 @end

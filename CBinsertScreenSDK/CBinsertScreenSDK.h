@@ -10,6 +10,14 @@
 
 @interface CBinsertScreenSDK : NSObject
 
+/*
+ *sdk 初始化
+ */
 +(CBinsertScreenSDK*) insertScreenSDK;
+
+/*
+ *展示sdk
+ */
++(void) showInsertScreenSDK;
 
 @end
