@@ -15,8 +15,7 @@
 		83324E861862E3B9007E1891 /* CBAdvertisementModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF591182A176C00E0611C /* CBAdvertisementModel.h */; };
 		83324E871862E3B9007E1891 /* CBNetWorkEngine.h in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF593182A176C00E0611C /* CBNetWorkEngine.h */; };
 		83324E881862E3B9007E1891 /* CBScreenView.h in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF595182A176C00E0611C /* CBScreenView.h */; };
-		83324E961862E52C007E1891 /* ad_dtop_closebtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 83324E941862E52C007E1891 /* ad_dtop_closebtn.png */; };
-		83324E971862E52C007E1891 /* ad_sc_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 83324E951862E52C007E1891 /* ad_sc_circle.png */; };
+		83324E9E1862E8CB007E1891 /* adInsertimage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83324E9D1862E8CB007E1891 /* adInsertimage.bundle */; };
 		833281CE182CF1C4005BAB1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AAF56B182A16B600E0611C /* Foundation.framework */; };
 		833281D3182CF1C5005BAB1C /* CBinsertScreenSDK.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 833281D2182CF1C5005BAB1C /* CBinsertScreenSDK.h */; };
 		833281D5182CF1C5005BAB1C /* CBinsertScreenSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 833281D4182CF1C5005BAB1C /* CBinsertScreenSDK.m */; };
@@ -89,8 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		83324E941862E52C007E1891 /* ad_dtop_closebtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad_dtop_closebtn.png; sourceTree = "<group>"; };
-		83324E951862E52C007E1891 /* ad_sc_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad_sc_circle.png; sourceTree = "<group>"; };
+		83324E9D1862E8CB007E1891 /* adInsertimage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = adInsertimage.bundle; sourceTree = "<group>"; };
 		833281CD182CF1C4005BAB1C /* libCBinsertScreenSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCBinsertScreenSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		833281D1182CF1C5005BAB1C /* CBinsertScreenSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBinsertScreenSDK-Prefix.pch"; sourceTree = "<group>"; };
 		833281D2182CF1C5005BAB1C /* CBinsertScreenSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBinsertScreenSDK.h; sourceTree = "<group>"; };
@@ -207,15 +205,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83324E931862E52C007E1891 /* adInsertimage */ = {
-			isa = PBXGroup;
-			children = (
-				83324E941862E52C007E1891 /* ad_dtop_closebtn.png */,
-				83324E951862E52C007E1891 /* ad_sc_circle.png */,
-			);
-			path = adInsertimage;
-			sourceTree = "<group>";
-		};
 		833281CF182CF1C4005BAB1C /* CBinsertScreenSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,7 +428,7 @@
 		83AAF5A8182A176C00E0611C /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				83324E931862E52C007E1891 /* adInsertimage */,
+				83324E9D1862E8CB007E1891 /* adInsertimage.bundle */,
 				83AAF5A9182A176C00E0611C /* 500-500_1.jpg */,
 				83AAF5AA182A176C00E0611C /* 500-500_2.jpg */,
 				83AAF5AB182A176C00E0611C /* 500-500_3.jpg */,
@@ -605,10 +594,9 @@
 				83AAF57E182A16B600E0611C /* Default@2x.png in Resources */,
 				83AAF580182A16B600E0611C /* Default-568h@2x.png in Resources */,
 				83AAF5EC182A176D00E0611C /* Entitlements.plist in Resources */,
-				83324E961862E52C007E1891 /* ad_dtop_closebtn.png in Resources */,
-				83324E971862E52C007E1891 /* ad_sc_circle.png in Resources */,
 				83AAF5EF182A176D00E0611C /* 500-500_1.jpg in Resources */,
 				83AAF5F0182A176D00E0611C /* 500-500_2.jpg in Resources */,
+				83324E9E1862E8CB007E1891 /* adInsertimage.bundle in Resources */,
 				83AAF5F1182A176D00E0611C /* 500-500_3.jpg in Resources */,
 				83AAF623182A19B100E0611C /* CBDomeViewController.xib in Resources */,
 			);

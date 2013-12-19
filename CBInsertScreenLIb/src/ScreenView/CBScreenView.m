@@ -180,7 +180,7 @@
     _closeBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewW - (dateViewW/10 + 3), 3, dateViewW/10, dateViewW/10)];
     UIButton* closeBut = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [closeBut setTitle:@"X" forState:UIControlStateNormal];
-    [closeBut setBackgroundImage:[UIImage imageNamed:@"ad_dtop_closebtn"] forState:UIControlStateNormal];
+    [closeBut setBackgroundImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_dtop_closebtn"] forState:UIControlStateNormal];
     [closeBut setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     closeBut.frame = CGRectMake(0, 0, dateViewW/10, dateViewW/10);
     [closeBut addTarget:self action:@selector(closeButtonSelector) forControlEvents:UIControlEventTouchDown];
@@ -271,20 +271,20 @@
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self oneImageItem]];
         NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
+        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
     }
     
     if([_imageArray count] > [self twoImageItem])
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self twoImageItem]];
         NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
+        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
     }
     if([_imageArray count] > [self threeImageItem])
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self threeImageItem]];
         NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"ad_sc_circle"]];
+        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
     }
     
 //    if([_imageArray count] > [self oneImageItem])
