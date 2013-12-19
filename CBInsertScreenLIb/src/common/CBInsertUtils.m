@@ -7,6 +7,7 @@
 //
 
 #import "CBInsertUtils.h"
+#import "CBinsertScreenSDK.h"
 
 //获取mac地址头文件
 #include <sys/socket.h>
@@ -48,11 +49,11 @@
 
 
 //*******************************
-#define CB_IOS_SDK_APPID             @"09090200"         //appId：后期分配的应用唯一标示码
-#define CB_IOS_SDK_SENDCOUNT         @"3"             //sendCount：需要获取的广告数
-#define CB_IOS_SDK_ADTYPE            @"chaping"             //adType：广告类型
-#define CB_IOS_SDK_PACKAGENAME       @"com.test.up_soft"   //packageName：应用唯一标示
-#define CB_IOS_SDK_VERSION           @"1.1.4"           //sdkVersion：sdk版本号
+#define CB_IOS_SDK_APPID             CB_AD_IOS_SDK_APPID        //appId：后期分配的应用唯一标示码
+#define CB_IOS_SDK_SENDCOUNT         CB_AD_IOS_SDK_SENDCOUNT    //sendCount：需要获取的广告数
+#define CB_IOS_SDK_ADTYPE            CB_AD_IOS_SDK_ADTYPE       //adType：广告类型
+#define CB_IOS_SDK_PACKAGENAME       CB_AD_IOS_SDK_PACKAGENAME  //packageName：应用唯一标示
+#define CB_IOS_SDK_VERSION           @"1.1.4"                   //sdkVersion：sdk版本号
 //*******************************
 
 //***********************************************************************************
