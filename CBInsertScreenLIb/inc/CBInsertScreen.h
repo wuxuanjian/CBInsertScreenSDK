@@ -23,6 +23,5 @@
 -(void) adDownSelector:(CBAdvertisementModel*)adItem;
 
 //展示sdk
--(void) showScreenView;
-
+-(BOOL) showScreenView;
 @end

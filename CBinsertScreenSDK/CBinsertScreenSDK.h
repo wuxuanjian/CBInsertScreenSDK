@@ -23,6 +23,6 @@
 /*
  *展示sdk
  */
-+(void) showInsertScreenSDK;
++(BOOL) showInsertScreenSDK;
 
 @end

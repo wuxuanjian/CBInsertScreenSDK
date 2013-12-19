@@ -29,10 +29,10 @@ static CBinsertScreenSDK*  inssdk = nil;
     return inssdk;
 }
 
-+(void) showInsertScreenSDK
++(BOOL) showInsertScreenSDK
 {
     [CBinsertScreenSDK insertScreenSDK];
-    [inssdk showInsertScreen];
+    return [inssdk showInsertScreen];
 }
 
 -(void) loadAdData
@@ -44,12 +44,13 @@ static CBinsertScreenSDK*  inssdk = nil;
     [insertScreen loadAdData];
 }
 
--(void) showInsertScreen
+-(BOOL) showInsertScreen
 {
     if(insertScreen && insertScreen != nil)
     {
-        [insertScreen showScreenView];
+        return [insertScreen showScreenView];
     }
+    return NO;
     
 }
 

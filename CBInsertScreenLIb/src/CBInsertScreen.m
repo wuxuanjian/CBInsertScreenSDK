@@ -8,7 +8,6 @@
 
 #import "CBInsertScreen.h"
 
-
 @interface CBInsertScreen() <SCrreenViewDeleage>
 {
     
@@ -53,9 +52,14 @@
      }];
 }
 
--(void) showScreenView
+-(BOOL) showScreenView
 {
-    if(_screenView)
+    if(_adArray == nil || [_adArray count] == 0)
+    {
+        return NO;
+    }
+    
+    if(_screenView == nil)
     {
         _screenView = [[CBScreenView alloc] init];
     }
@@ -69,8 +73,9 @@
     [_screenView showImage];
 //    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:_screenView];
     [[UIApplication sharedApplication].keyWindow addSubview:_screenView];
-    [_screenView deviceOrientationDidChange:[NSNotificationCenter defaultCenter]];
+    [_screenView deviceOrientationDidChange:nil];
     [self adToObtain:NO];
+    return YES;
 }
 
 //广告获取
