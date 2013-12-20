@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBAdvertisementModel.h"
 #import "InsertScreen.h"
 
 @protocol SCrreenViewDeleage <NSObject>

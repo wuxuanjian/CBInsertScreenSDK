@@ -9,10 +9,10 @@
 #ifndef CBInsertScreen_InsertScreen_h
 #define CBInsertScreen_InsertScreen_h
 
-#import "CBAdvertisementModel.h"
 
 #import "MKNetworkKit.h"    // MKNetWorkKit 网络第三方库
 #import "CBNetWorkEngine.h"
+#import "SvIncrementallyImage.h"
 #import "JSONKit.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>

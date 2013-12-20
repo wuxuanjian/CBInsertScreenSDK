@@ -21,7 +21,7 @@
 @synthesize powerclick;
 @synthesize pic3URL;
 @synthesize appDesc1;
-
+@synthesize svIncrementallyImg;
 
 
 @end

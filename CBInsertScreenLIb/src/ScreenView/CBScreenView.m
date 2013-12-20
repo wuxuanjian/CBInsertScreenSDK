@@ -8,7 +8,7 @@
 
 #import "CBScreenView.h"
 #import "sys/utsname.h"
-#import "UIImageView+WebCache.h"
+
 
 @interface CBScreenView()
 {
@@ -17,6 +17,8 @@
     
     CGAffineTransform rotationTransform;
     
+    SvIncrementallyImage* _webimage;
+    NSTimer *_updateImage;
 }
 @end
 
@@ -48,6 +50,7 @@
     self = [super initWithFrame:CGRectMake(0, 0, 10, 10)];
     if (self)
     {
+        _updateImage = nil;
         [self initViewDate];
     }
     return self;
@@ -55,6 +58,7 @@
 
 -(void) notificationCenter
 {
+    _focus = 0;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(detectShowOrientation)
                                                  name:UIApplicationDidChangeStatusBarOrientationNotification
@@ -123,13 +127,13 @@
     
     //图片
     _oneScrollImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0*dateViewW, 0, dateViewW, dateViewH)];
-//    _oneScrollImageView.backgroundColor = [UIColor brownColor];
+    _oneScrollImageView.backgroundColor = [UIColor clearColor];
     
     _twoScrollImageView = [[UIImageView alloc] initWithFrame:CGRectMake(1*dateViewW, 0, dateViewW, dateViewH)];
-//    _twoScrollImageView.backgroundColor = [UIColor greenColor];
+    _twoScrollImageView.backgroundColor = [UIColor clearColor];
     
     _threeScrollImageView = [[UIImageView alloc] initWithFrame:CGRectMake(2*dateViewW, 0,  dateViewW, dateViewH)];
-//    _threeScrollImageView.backgroundColor = [UIColor blueColor];
+    _threeScrollImageView.backgroundColor = [UIColor clearColor];
     
     //_showBgView
     _showBgView = [[UIView alloc] initWithFrame:CGRectMake(dateViewX, dateViewY, dateViewW, dateViewH)];
@@ -265,27 +269,89 @@
     }
 }
 
+- (void)updateImage
+{
+
+    if([_imageArray count] > [self twoImageItem])
+    {
+        if (_webimage.image == nil)
+        {
+            _twoScrollImageView.image = [UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"];
+        }
+        else
+        {
+            _twoScrollImageView.image = _webimage.image;
+        }
+    }
+}
+
 -(void) showImage
 {
+    if(_updateImage == nil)
+    {
+        _updateImage = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateImage) userInfo:nil repeats:YES];
+    }
+    
     if([_imageArray count] > [self oneImageItem])
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self oneImageItem]];
-        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+        SvIncrementallyImage *oneWebimage = adModel.svIncrementallyImg;
+        if (oneWebimage.image == nil)
+        {
+            _oneScrollImageView.image = [UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"];
+        }
+        else
+        {
+            _oneScrollImageView.image = oneWebimage.image;
+        }
     }
     
     if([_imageArray count] > [self twoImageItem])
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self twoImageItem]];
-        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+        _webimage = adModel.svIncrementallyImg;
+        if (_webimage.image == nil)
+        {
+            _twoScrollImageView.image = [UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"];
+        }
+        else
+        {
+            _twoScrollImageView.image = _webimage.image;
+        }
     }
     if([_imageArray count] > [self threeImageItem])
     {
         CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self threeImageItem]];
-        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
-        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+        SvIncrementallyImage *threeWebimage = adModel.svIncrementallyImg;
+        if (threeWebimage.image == nil)
+        {
+            _threeScrollImageView.image = [UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"];
+        }
+        else
+        {
+            _threeScrollImageView.image = threeWebimage.image;
+        }
     }
+    
+//    if([_imageArray count] > [self oneImageItem])
+//    {
+//        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self oneImageItem]];
+//        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
+//        [_oneScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+//    }
+//    
+//    if([_imageArray count] > [self twoImageItem])
+//    {
+//        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self twoImageItem]];
+//        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
+//        [_twoScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+//    }
+//    if([_imageArray count] > [self threeImageItem])
+//    {
+//        CBAdvertisementModel* adModel = [_imageArray objectAtIndex:[self threeImageItem]];
+//        NSURL *url = [NSURL URLWithString:adModel.pic3URL];
+//        [_threeScrollImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"adInsertimage.bundle/ad_sc_circle"]];
+//    }
     
 //    if([_imageArray count] > [self oneImageItem])
 //    {
@@ -344,6 +410,11 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeFromSuperview];
+    if(_updateImage)
+    {
+        [_updateImage invalidate];
+        _updateImage = nil;
+    }
 }
 
 -(void)adDownloadSelector

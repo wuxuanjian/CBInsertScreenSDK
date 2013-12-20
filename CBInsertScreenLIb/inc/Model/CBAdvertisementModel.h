@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
+//#import "InsertScreen.h"
+#import "SvIncrementallyImage.h"
 //    [{"position":"left",
 //        "anonymous":"yes",
 //        "appName":"sohu游戏中心",
@@ -36,5 +36,6 @@
 @property (nonatomic,strong) NSString* powerclick;
 @property (nonatomic,strong) NSString* pic3URL;
 @property (nonatomic,strong) NSString* appDesc1;
+@property (nonatomic,strong) SvIncrementallyImage* svIncrementallyImg;
 
 @end

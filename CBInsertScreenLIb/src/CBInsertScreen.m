@@ -130,6 +130,11 @@
             adModel.powerclick = [dic objectForKey:@"powerclick"];
             adModel.pic3URL = [dic objectForKey:@"pic3URL"];
             adModel.appDesc1 = [dic objectForKey:@"appDesc1"];
+            
+            NSURL *url = [[NSURL alloc] initWithString:adModel.pic3URL];
+            SvIncrementallyImage *webImage = [[SvIncrementallyImage alloc] initWithURL:url];
+            adModel.svIncrementallyImg = webImage;
+            
             if (i == ([arr count] - 1))
             {
                 setCbAdId(adModel.adId);

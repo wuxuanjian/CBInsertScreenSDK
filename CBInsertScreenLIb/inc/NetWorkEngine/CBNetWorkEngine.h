@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InsertScreen.h"
+#import "CBAdvertisementModel.h"
 typedef void (^CBNetWorkComplete)(NSString* responseString);
 typedef void (^CBNetWorkError)(NSError* err);
 @interface CBNetWorkEngine : MKNetworkEngine
