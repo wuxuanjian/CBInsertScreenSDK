@@ -818,7 +818,7 @@
       }
     });
   }];
-  
+
 #endif
   
   if(!self.isCancelled) {
@@ -829,7 +829,7 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-      self.connection = [[NSURLConnection alloc] initWithRequest:self.request 
+      self.connection = [[NSURLConnection alloc] initWithRequest:self.request
                                                         delegate:self 
                                                 startImmediately:NO]; 
       

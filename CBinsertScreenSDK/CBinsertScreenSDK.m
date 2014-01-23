@@ -19,11 +19,12 @@ static CBinsertScreenSDK*  inssdk = nil;
 
 @implementation CBinsertScreenSDK
 
-+(CBinsertScreenSDK*) insertScreenSDK
++(CBinsertScreenSDK*) insertScreenSDKView:(UIView*)view adDeleage:(id)deleage
 {
     if(inssdk == nil)
     {
         inssdk = [[CBinsertScreenSDK alloc] init];
+        [inssdk createInsertScreenView:view adDeleage:deleage];
         [inssdk loadAdData]; //初始化sdk 获取广告数据
     }
     return inssdk;
@@ -31,16 +32,27 @@ static CBinsertScreenSDK*  inssdk = nil;
 
 +(BOOL) showInsertScreenSDK
 {
-    [CBinsertScreenSDK insertScreenSDK];
-    return [inssdk showInsertScreen];
+    if(inssdk != nil)
+    {
+        return [inssdk showInsertScreen];
+    }
+    else
+    {
+        ADLog(@"请调用 insertScreenSDK 初始化 广告sdk");
+    }
+    return NO;
+}
+
+-(void) createInsertScreenView:(UIView*)view adDeleage:(id)deleage
+{
+    if (insertScreen == nil)
+    {
+        insertScreen = [[CBInsertScreen alloc] initDeleage:deleage fatheview:view];
+    }
 }
 
 -(void) loadAdData
 {
-    if (insertScreen == nil)
-    {
-        insertScreen = [[CBInsertScreen alloc] init];
-    }
     [insertScreen loadAdData];
 }
 

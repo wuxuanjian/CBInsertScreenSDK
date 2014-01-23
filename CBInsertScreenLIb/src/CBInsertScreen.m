@@ -16,6 +16,10 @@
 @property (nonatomic,strong) CBScreenView* screenView;    //view
 @property (nonatomic,strong) CBNetWorkEngine* networkEng; //网络
 @property (nonatomic,strong) NSMutableArray* adArray;
+
+@property (nonatomic,assign) id<CBInsertScreenDeleage> addeleage;
+@property (nonatomic,strong) UIView   *fatherView;
+
 @end
 
 @implementation CBInsertScreen
@@ -23,11 +27,16 @@
 @synthesize screenView = _screenView;    //view
 @synthesize networkEng = _networkEng; //网络
 @synthesize adArray = _adArray; //返回的广告数组广告
-- (id)init
+@synthesize addeleage = _addeleage;
+@synthesize fatherView = _fatherView;
+
+-(id)initDeleage:(id)deleage fatheview:(UIView*)view
 {
     self = [super init];
     if (self)
     {
+        _addeleage = deleage;
+        _fatherView = view;
         _gpsEngine = [[CBGPSEngine alloc] init];
         _screenView = [[CBScreenView alloc] init];
         [self gpsLocation];
@@ -48,7 +57,7 @@
 {
     [_gpsEngine startLocation:^(BOOL aState)
      {
-         NSLog(@"LocationOk");
+         ADLog(@"LocationOk");
      }];
 }
 
@@ -72,9 +81,25 @@
 //    [_screenView.imageArray addObject:@"500-500_3.jpg"];
     [_screenView showImage];
 //    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:_screenView];
-    [[UIApplication sharedApplication].keyWindow addSubview:_screenView];
+    
+    if(_fatherView)
+    {
+        [_fatherView addSubview:_screenView];
+    }
+    else
+    {
+        [[UIApplication sharedApplication].keyWindow addSubview:_screenView];
+    }
+    
+    
     [_screenView deviceOrientationDidChange:nil];
+    [_screenView detectShowOrientation];
+    
     [self adToObtain:NO];
+    if(_addeleage && [_addeleage respondsToSelector:@selector(showInsertScreenAD)])
+    {
+        [_addeleage showInsertScreenAD];
+    }
     return YES;
 }
 
@@ -83,11 +108,12 @@
 {
     [_networkEng postDataToServer:^(NSString *responseString)
     {
+        
         [self adToobtainComplete:responseString];
     }
     netWorkError:^(NSError *err)
     {
-        
+        ADLog(@"广告获取失败");
     }
     first:theFirst];
 }
@@ -113,7 +139,15 @@
     id obj = [responseString JSONValue];
     if (obj && [obj isKindOfClass:[NSArray class]])
     {
+        
         NSArray* arr = obj;
+        if([arr count] > 0)
+        {
+            if(_addeleage && [_addeleage respondsToSelector:@selector(loadDateInsertScreenAD)])
+            {
+                [_addeleage loadDateInsertScreenAD];
+            }
+        }
         for (int i = 0; i < [arr count]; i++)
         {
             NSDictionary* dic = [arr objectAtIndex:i];
@@ -153,7 +187,19 @@
 {
     [_networkEng postInstallation:adItem];
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:adItem.appURL]];
+    if(_addeleage && [_addeleage respondsToSelector:@selector(clickInsertScreenAD)])
+    {
+        [_addeleage clickInsertScreenAD];
+    }
 }
 
+//关闭广告
+-(void)adCloseSelector
+{
+    if(_addeleage && [_addeleage respondsToSelector:@selector(closeInsertScreenAD)])
+    {
+        [_addeleage closeInsertScreenAD];
+    }
+}
 
 @end

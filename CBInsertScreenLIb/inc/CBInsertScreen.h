@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "InsertScreen.h"
+#import "CBinsertScreenSDK.h"
 
 @interface CBInsertScreen : NSObject
 
-
-- (id)init;
+- (id)initDeleage:(id)deleage fatheview:(UIView*)view;
 
 /*
  * 获取广告数据
@@ -24,4 +24,5 @@
 
 //展示sdk
 -(BOOL) showScreenView;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "CBDomeViewController.h"
-#import "CBinsertScreenSDK.h"
+
 
 @interface CBDomeViewController ()
 {
@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [CBinsertScreenSDK insertScreenSDK];
+    [CBinsertScreenSDK insertScreenSDKView:self.view adDeleage:self];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -73,7 +73,29 @@
 
 }
 
+//获取广告数据
+-(void) loadDateInsertScreenAD
+{
+    NSLog(@"获取广告数据");
+}
 
+//显示广告
+-(void) showInsertScreenAD
+{
+    NSLog(@"显示广告");
+}
+
+//点击广告
+-(void) clickInsertScreenAD
+{
+    NSLog(@"点击广告");
+}
+
+//关闭广告
+-(void) closeInsertScreenAD
+{
+    NSLog(@"关闭广告");
+}
 
 
 

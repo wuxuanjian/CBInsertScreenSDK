@@ -60,7 +60,7 @@
 #pragma mark - location Delegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-//    NSLog(@"定位出错");
+    ADLog(@"定位出错");
     setLocationState(NO);
     locationBlock(NO);
 }
@@ -117,7 +117,7 @@
 
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error
 {
-//    NSLog(@"获取失败");
+    ADLog(@"获取失败");
     setLocationState(NO);
     locationBlock(NO);
 }
@@ -130,7 +130,7 @@
     
     [self.geoCoder reverseGeocodeLocation:locationGps completionHandler:^(NSArray *placemarks, NSError *error)
      {
-         NSLog(@"error %@ placemarks count %d",error.localizedDescription,placemarks.count);
+         ADLog(@"error %@ placemarks count %d",error.localizedDescription,placemarks.count);
          if (placemarks.count == 0)
          {
              setLocationState(NO);

@@ -13,7 +13,7 @@
 @protocol SCrreenViewDeleage <NSObject>
 
 - (void)adDownSelector:(CBAdvertisementModel*)model;
-
+- (void)adCloseSelector;
 @end
 
 
@@ -40,7 +40,7 @@
 -(void) notificationCenter;
 -(void) showImage;
 - (void)setFrameRect:(SCREEN_DIRECTION)direction;
-
+-(void)detectShowOrientation;
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification;
 

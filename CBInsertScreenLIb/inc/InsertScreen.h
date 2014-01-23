@@ -29,4 +29,11 @@
 
 #import "CBInsertScreen.h"
 
+
+
+
+//#define ADLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#define ADLog(...)
+
+
 #endif

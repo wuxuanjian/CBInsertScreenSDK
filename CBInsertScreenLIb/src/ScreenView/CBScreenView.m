@@ -72,12 +72,12 @@
 {
     if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft ||[UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)
     {//
-        DLog(@"videolist 横屏");
+        ADLog(@"videolist 横屏");
         screenDirection = SCREEN_DIRECTION_ACROSS;
     }
     else
     {//
-        DLog(@"videoList 竖屏");
+        ADLog(@"videoList 竖屏");
         screenDirection = SCREEN_DIRECTION_VERTICAL;
     }
 //    [self setNeedsDisplay];
@@ -400,13 +400,11 @@
 
 -(void)closeButtonSelector
 {
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(detectShowOrientation)
-//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
-//                                               object:nil];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:)
-//												 name:UIDeviceOrientationDidChangeNotification object:nil];
+
+    if(_screenViewDeleage && [_screenViewDeleage respondsToSelector:@selector(adCloseSelector)])
+    {
+        [_screenViewDeleage adCloseSelector];
+    }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeFromSuperview];
@@ -438,7 +436,7 @@
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification
 {
-    DLog(@"device 屏幕旋转");
+    ADLog(@"device 屏幕旋转");
 	if (!self.superview)
     {
 		return;
@@ -449,7 +447,8 @@
 		[self setTransformForCurrentOrientation:YES];
 	} else
     {
-		self.bounds = self.superview.bounds;
+		self.frame = self.superview.bounds;
+//        self.bounds = self.superview.bounds;
 		[self setNeedsDisplay];
 	}
 }

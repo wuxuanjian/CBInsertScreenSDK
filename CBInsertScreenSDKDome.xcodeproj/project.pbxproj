@@ -38,7 +38,6 @@
 		83AAF5E9182A176D00E0611C /* CBAdvertisementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF59E182A176C00E0611C /* CBAdvertisementModel.m */; };
 		83AAF5EA182A176D00E0611C /* CBNetWorkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF5A0182A176C00E0611C /* CBNetWorkEngine.m */; };
 		83AAF5EB182A176D00E0611C /* CBScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AAF5A2182A176C00E0611C /* CBScreenView.m */; };
-		83AAF5EC182A176D00E0611C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83AAF5A3182A176C00E0611C /* Entitlements.plist */; };
 		83AAF5EF182A176D00E0611C /* 500-500_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83AAF5A9182A176C00E0611C /* 500-500_1.jpg */; };
 		83AAF5F0182A176D00E0611C /* 500-500_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83AAF5AA182A176C00E0611C /* 500-500_2.jpg */; };
 		83AAF5F1182A176D00E0611C /* 500-500_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83AAF5AB182A176C00E0611C /* 500-500_3.jpg */; };
@@ -121,7 +120,6 @@
 		83AAF59E182A176C00E0611C /* CBAdvertisementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAdvertisementModel.m; sourceTree = "<group>"; };
 		83AAF5A0182A176C00E0611C /* CBNetWorkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNetWorkEngine.m; sourceTree = "<group>"; };
 		83AAF5A2182A176C00E0611C /* CBScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBScreenView.m; sourceTree = "<group>"; };
-		83AAF5A3182A176C00E0611C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		83AAF5A9182A176C00E0611C /* 500-500_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "500-500_1.jpg"; sourceTree = "<group>"; };
 		83AAF5AA182A176C00E0611C /* 500-500_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "500-500_2.jpg"; sourceTree = "<group>"; };
 		83AAF5AB182A176C00E0611C /* 500-500_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "500-500_3.jpg"; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 		83AAF55D182A16B600E0611C = {
 			isa = PBXGroup;
 			children = (
-				83AAF5A3182A176C00E0611C /* Entitlements.plist */,
 				83AAF5A4182A176C00E0611C /* MainView */,
 				83AAF586182A176C00E0611C /* CBInsertScreenLIb */,
 				83AAF5A8182A176C00E0611C /* resource */,
@@ -565,7 +562,6 @@
 				83AAF57C182A16B600E0611C /* Default.png in Resources */,
 				83AAF57E182A16B600E0611C /* Default@2x.png in Resources */,
 				83AAF580182A16B600E0611C /* Default-568h@2x.png in Resources */,
-				83AAF5EC182A176D00E0611C /* Entitlements.plist in Resources */,
 				83AAF5EF182A176D00E0611C /* 500-500_1.jpg in Resources */,
 				83AAF5F0182A176D00E0611C /* 500-500_2.jpg in Resources */,
 				83324E9E1862E8CB007E1891 /* adInsertimage.bundle in Resources */,
@@ -644,6 +640,7 @@
 		833281D6182CF1C5005BAB1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/CBinsertScreenSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CBinsertScreenSDK/CBinsertScreenSDK-Prefix.pch";
@@ -657,6 +654,7 @@
 		833281D7182CF1C5005BAB1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/CBinsertScreenSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CBinsertScreenSDK/CBinsertScreenSDK-Prefix.pch";
@@ -730,7 +728,7 @@
 		83AAF584182A16B600E0611C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -739,7 +737,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CBInsertScreenSDKDome/CBInsertScreenSDKDome-Prefix.pch";
 				INFOPLIST_FILE = "CBInsertScreenSDKDome/CBInsertScreenSDKDome-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -748,7 +746,7 @@
 		83AAF585182A16B600E0611C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -758,7 +756,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CBInsertScreenSDKDome/CBInsertScreenSDKDome-Prefix.pch";
 				INFOPLIST_FILE = "CBInsertScreenSDKDome/CBInsertScreenSDKDome-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;

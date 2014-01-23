@@ -91,6 +91,7 @@
                                 sendCount,@"sendCount",
                                 adid,@"adId",
                                 nil];
+    
     MKNetworkOperation *op = [self operationWithPath:@"androidService/advertisingIos/findAdverByClient.h"
                                               params:dic
                                           httpMethod:@"POST"];
@@ -99,12 +100,12 @@
     [op onCompletion:^(MKNetworkOperation *operation)
     {
         NSString* responseStr = operation.responseString;
-        DLog(@"%@", responseStr);
+        ADLog(@"%@", responseStr);
         completeblock(responseStr);
     }
     onError:^(NSError *error)
     {
-        DLog(@"%@", error);
+        ADLog(@"%@", error);
         errorblock(error);
     }];
     
@@ -146,11 +147,11 @@
     [op onCompletion:^(MKNetworkOperation *operation)
      {
          NSString* responseStr = operation.responseString;
-         DLog(@"%@", responseStr);
+         ADLog(@"%@", responseStr);
      }
              onError:^(NSError *error)
      {
-         DLog(@"%@", error);
+         ADLog(@"%@", error);
      }];
     [self enqueueOperation:op];
     

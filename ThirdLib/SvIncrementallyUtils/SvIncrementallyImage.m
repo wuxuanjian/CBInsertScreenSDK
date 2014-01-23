@@ -10,6 +10,10 @@
 #import <ImageIO/ImageIO.h>
 #import <CoreFoundation/CoreFoundation.h>
 
+
+//#define ImageLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#define ImageLog(...)
+
 @interface SvIncrementallyImage ()
 {
     NSURLRequest    *_request;
@@ -70,14 +74,14 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     _expectedLeght = response.expectedContentLength;
-    NSLog(@"expected Length: %lld", _expectedLeght);
+    ImageLog(@"expected Length: %lld", _expectedLeght);
     
     NSString *mimeType = response.MIMEType;
-    NSLog(@"MIME TYPE %@", mimeType);
+    ImageLog(@"MIME TYPE %@", mimeType);
     
     NSArray *arr = [mimeType componentsSeparatedByString:@"/"];
     if (arr.count < 1 || ![[arr objectAtIndex:0] isEqual:@"image"]) {
-        NSLog(@"not a image url");
+        ImageLog(@"not a image url");
         [connection cancel];
         [_conn release]; _conn = nil;
     }
@@ -85,12 +89,12 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Connection %@ error, error info: %@", connection, error);
+    ImageLog(@"Connection %@ error, error info: %@", connection, error);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"Connection Loading Finished!!!");
+    ImageLog(@"Connection Loading Finished!!!");
     
     // if download image data not complete, create final image
     if (!_isLoadFinished) {

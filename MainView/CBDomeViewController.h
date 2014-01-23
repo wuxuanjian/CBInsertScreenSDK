@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBinsertScreenSDK.h"
+
 @class CBGPSEngine;
-@interface CBDomeViewController : UIViewController
+@interface CBDomeViewController : UIViewController <CBInsertScreenDeleage>
 @property (nonatomic, strong) CBGPSEngine* gpsEngine;
 - (IBAction)textButton:(id)sender;
 - (IBAction)textButton1:(id)sender;

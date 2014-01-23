@@ -13,12 +13,31 @@
 #define CB_AD_IOS_SDK_ADTYPE            @"chaping"             //adType：广告类型
 #define CB_AD_IOS_SDK_PACKAGENAME       @"com.test.up_soft"   //packageName：应用唯一标示
 
+@class UIView;
+@protocol CBInsertScreenDeleage <NSObject>
+
+//获取广告数据成功
+-(void) loadDateInsertScreenAD;
+
+//显示广告
+-(void) showInsertScreenAD;
+
+//点击广告
+-(void) clickInsertScreenAD;
+
+//关闭广告
+-(void) closeInsertScreenAD;
+
+@end
+
+
+//-----------------------广告sdk----------
 @interface CBinsertScreenSDK : NSObject
 
 /*
  *sdk 初始化
  */
-+(CBinsertScreenSDK*) insertScreenSDK;
++(CBinsertScreenSDK*) insertScreenSDKView:(UIView*)view adDeleage:(id)deleage;
 
 /*
  *展示sdk
